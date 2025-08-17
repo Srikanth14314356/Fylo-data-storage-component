@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fylo Data Storage Component</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: hsl(229, 57%, 11%);
+      background-image: url("images/bg-desktop.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+    }
+
+    /* Left card */
+    .card-left {
+      background-color: hsl(228, 56%, 26%);
+      padding: 2rem;
+      border-radius: 10px 100px 10px 10px;
+      width: 260px;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .icons div {
+      background: hsl(229, 57%, 11%);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    /* Right card */
+    .card-right {
+      background-color: hsl(228, 56%, 26%);
+      padding: 2rem;
+      border-radius: 10px;
+      width: 500px;
+      position: relative;
+    }
+
+    .card-right p {
+      font-size: 14px;
+      color: hsl(243, 100%, 93%);
+      margin: 0 0 10px;
+    }
+
+    .progress {
+      background: hsl(229, 57%, 11%);
+      height: 20px;
+      border-radius: 20px;
+    
+      position: relative;
+    }
+
+    .progress-bar {
+      background: linear-gradient(to right, hsl(6, 78%, 75%), hsl(335, 87%, 57%));
+      width: 60%; 
+      height: 100%;
+      border-radius: 30px;
+      position: relative;
+    }
+
+    .progress-bar::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      right: 5px;
+      top: 4px;
+    }
+
+    .storage-numbers {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-top: 5px;
+      color: hsl(243, 100%, 93%);
+    }
+
+   
+    .bubble {
+      background: white;
+      color: hsl(229, 57%, 11%);
+      padding: 10px 20px;
+      border-radius: 10px 10px 0 10px;
+      font-weight: 700;
+      position: absolute;
+      top: -40px;
+      right: 20px;
+      font-size: 20px;
+    }
+
+    .bubble span {
+      font-size: 12px;
+      color: hsl(229, 7%, 55%);
+      font-weight: 400;
+      margin-left: 5px;
+    }
+
+    .bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-top: 15px solid white;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-image: url("images/bg-mobile.png");
+        background-position: center;
+      }
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .bubble {
+        top: auto;
+        bottom: -40px;
+        right: 50%;
+        transform: translateX(50%);
+        border-radius: 10px;
+      }
+     
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Left card -->
+    <div class="card-left">
+      <div class="logo">
+        <img src="images/logo.svg" alt="Fylo">
+      </div>
+      <div class="icons">
+        <div><img src="images/icon-document.svg" alt=""></div>
+        <div><img src="images/icon-folder.svg" alt=""></div>
+        <div><img src="images/icon-upload.svg" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Right card -->
+    <div class="card-right">
+      <p>You’ve used <strong>815 GB</strong> of your storage</p>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="storage-numbers">
+        <span>0 GB</span>
+        <span>1000 GB</span>
+      </div>
+      <div class="bubble">185 <span>GB LEFT</span></div>
+    </div>
+
+  </div>
+</body>
+</html>
